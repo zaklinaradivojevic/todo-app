@@ -7,39 +7,52 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="light.css">
   <title>Frontend Mentor | Todo app</title>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300;700&family=Manrope:wght@800&family=Outfit:wght@500&family=Red+Hat+Text:wght@700&display=swap"
+    rel="stylesheet">
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
 
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
 </head>
 
 <body>
+  <div class="todo-panel">
+    <picture>
+      <source media="(max-width:465px)"
+        srcset="https://github.com/zaklinaradivojevic/todo-app/blob/main/images/bg-mobile-light.jpg?raw=true">
+      <img class="header-img"
+        src="https://github.com/zaklinaradivojevic/todo-app/blob/main/images/bg-desktop-light.jpg?raw=true"
+        alt="background-img">
+    </picture>
+    <h1 class="title">Todo</h1>
+    <img class="moon-icon"
+      src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/8c812e715ad10f19665a13ecd44d1a5d51d6f0be/images/icon-moon.svg"
+      alt="moon-icon">
+    <div class="input-fild">
+      <div class="button-cheked">
+        <img class="cheked-btn"
+          src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/8c812e715ad10f19665a13ecd44d1a5d51d6f0be/images/icon-check.svg"
+          alt="cheked-icon">
+      </div>
+      <input type="text" placeholder="Curently typing" required>
+    </div>
+    <div class="todo" id="todo" onclick="myFunction(event)">
+      <p class="paragraf" id="dinamicNum">0</p>
+      <p class="paragraf" id="leftItems">items left</p>
+      <p class="paragraf active" id="all">All</p>
+      <p class="paragraf" id="activep">Active</p>
+      <p class="paragraf" id="complited">Completed</p>
+      <p class="paragraf" id="clear"> Clear Completed</p>
+    </div>
+    Drag and drop to reorder list
 
-  Todo
-
-  <!-- Add dynamic number --> items left
-
-  All
-  Active
-  Completed
-
-  Clear Completed
-
-  Drag and drop to reorder list
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Zaklina Radivojevic</a>.
+    </div>
   </div>
   <script src="index.js"></script>
 </body>
