@@ -37,8 +37,27 @@
           src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/8c812e715ad10f19665a13ecd44d1a5d51d6f0be/images/icon-check.svg"
           alt="cheked-icon">
       </div>
-      <input type="text" placeholder="Curently typing" required>
+      <input id="myInput" type="text" placeholder="Curently typing" required>
     </div>
+
+    <table id="table">
+      <tr id="myRow">
+        <td>
+          <div class="table-fild">
+            <div class="table-cheked">
+              <img class="cheked-img"
+                src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/8c812e715ad10f19665a13ecd44d1a5d51d6f0be/images/icon-check.svg"
+                alt="cheked-icon">
+            </div>
+            <p id="tableText">Complite online Java Script corse</p>
+            <img class="delete-row" id="deleteRow"
+              src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/c533248264a38016caf370e258467a7653b41095/images/icon-cross.svg"
+              onclick="deleteRow()">
+
+        <td>
+      </tr>
+    </table>
+
     <div class="todo" id="todo" onclick="myFunction(event)">
       <p class="paragraf" id="dinamicNum">0</p>
       <p class="paragraf" id="leftItems">items left</p>
@@ -47,7 +66,8 @@
       <p class="paragraf" id="complited">Completed</p>
       <p class="paragraf" id="clear"> Clear Completed</p>
     </div>
-    Drag and drop to reorder list
+
+    <p class="drag">Drag and drop to reorder list</p>
 
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.

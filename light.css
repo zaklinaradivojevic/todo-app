@@ -37,8 +37,8 @@ body{
     text-transform: uppercase;
     font-size: 1.2em;
     letter-spacing: 0.3em;
-   color:var(--very-light-gray); 
-   position: relative;
+    color:var(--very-light-gray); 
+    position: relative;
 }
 .header-img{
     z-index: -999;
@@ -53,7 +53,7 @@ body{
 .input-fild{
    width:530px;
    height:60px;
-   margin-left:449px;
+   margin-left:33.3%;
    border-radius: 10px;
    background-color:white;
    justify-content: center;
@@ -66,7 +66,7 @@ body{
     width:20px;
     height:20px;
     border-radius: 50%;
-    border:1px solid var(--light-grayish-blue);
+    border:1px solid var(--light-grayish-blue );
     margin-top:20px;
     margin-left:20px;
     z-index: 2;
@@ -100,19 +100,18 @@ input{
    position: relative;
 }
 .todo{
-    width:530px;
+   width:530px;
    height:60px;
-   margin-top: 100px;
-   margin-left:449px;
+   margin-top: 1px;
+   margin-left: 33.3%;
    border-radius: 10px;
    background-color: white;
-   box-shadow: 1px 1px 1px rgb(0,0,0,0.2);
    justify-content: center;
    align-items: center;
    text-align: center;
-   display: block;
-   z-index: -99;
    display: flex; 
+   position: relative;
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 
@@ -138,9 +137,77 @@ input{
 
 .attribution {
     font-size: 11px;
-    text-align: center;
+    margin-left: 37%;
+    position: absolute;
+    bottom:0;
   }
-
+  table{
+    width:530px;
+    height:auto;
+    margin-top: 30px;
+    background-color: transparent;
+    margin-left: 33.3%;
+    display:flex;
+    flex-wrap: wrap;
+    z-index: 2;
+  }
+ 
+.table-fild {
+  width:530px;
+   height:60px;
+   border-radius: 10px;
+   background-color:white;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   display: block;
+}
+.table-fild1{
+    width:530px;
+    height:60px;
+    border-radius: 10px;
+    background-color:white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: block;
+}
+.table-cheked{
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+    border:1px solid var(--light-grayish-blue );
+    top:20px;
+    left:20px;
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+  }
+.table-checked:hover{
+    border:1px solid   blue;
+}
+.cheked-img{
+    z-index: 1;
+    background-color:linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+}
+#tableText{
+    margin-top: 5px;
+    font-size: 0.6em;
+}
+.delete-row{
+    float:right;
+    right:40px;
+    bottom: 20px;
+    position: relative;
+}
   .attribution a {
     color: hsl(228, 45%, 44%);
   }
+  
+  
+  .drag{
+      margin-top:20px;
+      font-size: 0.7em;
+      text-align: center;
+  }
+  
