@@ -10,7 +10,12 @@ function myFunction(e) {
 var input = document.getElementById("myInput");
 
 input.addEventListener("keyup", function (event) {
-    if (event.keyCode === 13) {
+    var x;
+    x = document.getElementById("myInput").value;
+    if (x == "") {
+        alert("Enter  todo  list  ");
+    }
+    if (event.keyCode === 13 && x != "") {
         event.preventDefault();
         var row = document.getElementById("myRow");
         var table = document.getElementById("table");
@@ -27,9 +32,10 @@ input.addEventListener("keyup", function (event) {
             <p id="tableText">${input.value}</p>
             <img class="delete-row" id="deleteRow" src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/c533248264a38016caf370e258467a7653b41095/images/icon-cross.svg" onclick="deleteRow()">
    ` ;
-
     }
 });
+
+
 
 function deleteRow() {
     document.getElementById("table").deleteRow(0);
