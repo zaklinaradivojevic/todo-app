@@ -24,7 +24,7 @@ input.addEventListener("keyup", function (event) {
         var row = table.insertRow(0);
         var cell = row.insertCell(0);
         cell.innerHTML = `<div class="table-fild">
-        <div class="table-cheked">
+        <div class="table-cheked" id="tablecheked" onclick="checkImg()">
           <img class="cheked-img"
             src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/8c812e715ad10f19665a13ecd44d1a5d51d6f0be/images/icon-check.svg"
             alt="cheked-icon">
@@ -40,3 +40,11 @@ input.addEventListener("keyup", function (event) {
 function deleteRow() {
     document.getElementById("table").deleteRow(0);
 }
+
+function checkImg() {
+    document.getElementById("tablecheked").classList.toggle("checked-bg");
+    document.getElementById("tableText").classList.toggle("checked-bg-text");
+
+}
+
+

@@ -37,15 +37,15 @@
           src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/8c812e715ad10f19665a13ecd44d1a5d51d6f0be/images/icon-check.svg"
           alt="cheked-icon">
       </div>
-      <input id="myInput" type="text" placeholder="Curently typing">
+      <input id="myInput" type="text" placeholder="Curently typing" onclick="this.value=''">
     </div>
 
     <table id="table">
       <tr id="myRow">
         <td>
           <div class="table-fild">
-            <div class="table-cheked">
-              <img class="cheked-img"
+            <div class="table-cheked" id="tablecheked" onclick="checkImg()">
+              <img class="cheked-img" id="checkedImg"
                 src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/8c812e715ad10f19665a13ecd44d1a5d51d6f0be/images/icon-check.svg"
                 alt="cheked-icon">
             </div>

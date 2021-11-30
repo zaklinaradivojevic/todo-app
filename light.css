@@ -95,6 +95,7 @@ input{
     color: var(--very-dark-grayish-blue);
     font-weight: 400;
 }
+
 .cheked-btn{
    z-index: 1;
    position: relative;
@@ -162,16 +163,7 @@ input{
    text-align: center;
    display: block;
 }
-.table-fild1{
-    width:530px;
-    height:60px;
-    border-radius: 10px;
-    background-color:white;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: block;
-}
+
 .table-cheked{
     width:20px;
     height:20px;
@@ -183,13 +175,25 @@ input{
     cursor: pointer;
     position: relative;
   }
-.table-checked:hover{
+.table-cheked:hover{
     border:1px solid   blue;
+}
+.checked-bg{
+  background: linear-gradient(hsl(192, 100%, 67%) , hsl(280, 87%, 65%));
+  width:20px;
+  height:20px;
+  border-radius: 50%;
+  top:20px;
+  left:20px;
+  z-index: 1; 
+}
+.checked-bg-text{
+text-decoration: line-through;
 }
 .cheked-img{
     z-index: 1;
-    background-color:linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
-}
+    margin-bottom:10px;
+   }
 #tableText{
     margin-top: 5px;
     font-size: 0.6em;
