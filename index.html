@@ -14,8 +14,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300;700&family=Manrope:wght@800&family=Outfit:wght@500&family=Red+Hat+Text:wght@700&display=swap"
     rel="stylesheet">
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-
 </head>
 
 <body>
@@ -27,54 +25,138 @@
         src="https://github.com/zaklinaradivojevic/todo-app/blob/main/images/bg-desktop-light.jpg?raw=true"
         alt="background-img">
     </picture>
-    <h1 class="title">Todo</h1>
-    <img class="moon-icon"
-      src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/8c812e715ad10f19665a13ecd44d1a5d51d6f0be/images/icon-moon.svg"
-      alt="moon-icon">
-    <div class="input-fild">
-      <div class="button-cheked">
-        <img class="cheked-btn"
-          src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/8c812e715ad10f19665a13ecd44d1a5d51d6f0be/images/icon-check.svg"
-          alt="cheked-icon">
+    <div class="container" rol="main">
+      <div class="header">
+        <h1 class="title">Todo</h1>
+        <img class="moon-icon"
+          src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/8c812e715ad10f19665a13ecd44d1a5d51d6f0be/images/icon-moon.svg"
+          alt="moon-icon">
       </div>
-      <input id="myInput" type="text" placeholder="Curently typing" onclick="this.value=''">
-    </div>
-
-    <table id="table">
-      <tr id="myRow">
-        <td>
-          <div class="table-fild">
-            <div class="table-cheked" id="tablecheked" onclick="checkImg()">
-              <img class="cheked-img" id="checkedImg"
+      <div class="input-fild">
+        <div class="button-cheked">
+          <img class="cheked-btn"
+            src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/8c812e715ad10f19665a13ecd44d1a5d51d6f0be/images/icon-check.svg"
+            alt="cheked-icon">
+        </div>
+        <input id="myInput" type="text" placeholder="Curently typing" required>
+      </div>
+      <div class="todo-items-list">
+        <div class="todo-items">
+          <div class="todo-item draggable" draggable="true">
+            <div class="button-cheked" onclick="checkText1()">
+              <img class="cheked-btn"
                 src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/8c812e715ad10f19665a13ecd44d1a5d51d6f0be/images/icon-check.svg"
                 alt="cheked-icon">
             </div>
-            <p id="tableText">Complite online Java Script corse</p>
-            <img class="delete-row" id="deleteRow"
-              src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/c533248264a38016caf370e258467a7653b41095/images/icon-cross.svg"
-              onclick="deleteRow()">
+            <div class="todo-text">
+              <p class="todoText" id="1">Complite online Java Script corse</p>
+            </div>
+            <div class="delete">
+              <img class="delete-row"
+                src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/c533248264a38016caf370e258467a7653b41095/images/icon-cross.svg">
+            </div>
 
-        <td>
-      </tr>
-    </table>
+          </div>
+          <div class="todo-item draggable" draggable="true">
+            <div class="button-cheked" onclick="checkText2()">
+              <img class="cheked-btn"
+                src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/8c812e715ad10f19665a13ecd44d1a5d51d6f0be/images/icon-check.svg"
+                alt="cheked-icon">
+            </div>
+            <div class="todo-text">
+              <p class="todoText" id="2">Jog around the park x3</p>
+            </div>
+            <div class="delete">
+              <img class="delete-row"
+                src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/c533248264a38016caf370e258467a7653b41095/images/icon-cross.svg">
+            </div>
 
-    <div class="todo" id="todo" onclick="myFunction(event)">
-      <p class="paragraf" id="dinamicNum">0</p>
-      <p class="paragraf" id="leftItems">items left</p>
-      <p class="paragraf active" id="all">All</p>
-      <p class="paragraf" id="activep">Active</p>
-      <p class="paragraf" id="complited">Completed</p>
-      <p class="paragraf" id="clear"> Clear Completed</p>
-    </div>
+          </div>
+          <div class="todo-item draggable" draggable="true">
+            <div class="button-cheked" onclick="checkText3()">
+              <img class="cheked-btn"
+                src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/8c812e715ad10f19665a13ecd44d1a5d51d6f0be/images/icon-check.svg"
+                alt="cheked-icon">
+            </div>
+            <div class="todo-text">
+              <p class="todoText" id="3">10 minutes meditation</p>
+            </div>
+            <div class="delete">
+              <img class="delete-row"
+                src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/c533248264a38016caf370e258467a7653b41095/images/icon-cross.svg">
+            </div>
+          </div>
+          <div class="todo-item draggable" draggable="true">
+            <div class="button-cheked" onclick="checkText4()">
+              <img class="cheked-btn"
+                src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/8c812e715ad10f19665a13ecd44d1a5d51d6f0be/images/icon-check.svg"
+                alt="cheked-icon">
+            </div>
+            <div class="todo-text">
+              <p class="todoText" id="4">Reed for 1 hour</p>
+            </div>
+            <div class="delete">
+              <img class="delete-row"
+                src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/c533248264a38016caf370e258467a7653b41095/images/icon-cross.svg">
+            </div>
 
-    <p class="drag">Drag and drop to reorder list</p>
+          </div>
+          <div class="todo-item draggable" draggable="true">
+            <div class="button-cheked" onclick="checkText5()">
+              <img class="cheked-btn"
+                src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/8c812e715ad10f19665a13ecd44d1a5d51d6f0be/images/icon-check.svg"
+                alt="cheked-icon">
+            </div>
+            <div class="todo-text">
+              <p class="todoText" id="5">Pick up groceries</p>
+            </div>
+            <div class="delete">
+              <img class="delete-row"
+                src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/c533248264a38016caf370e258467a7653b41095/images/icon-cross.svg">
+            </div>
 
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Zaklina Radivojevic</a>.
-    </div>
-  </div>
-  <script src="index.js"></script>
+          </div>
+          <div class="todo-item draggable" draggable="true">
+
+            <div class="button-cheked" onclick="checkText6()">
+              <img class="cheked-btn"
+                src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/8c812e715ad10f19665a13ecd44d1a5d51d6f0be/images/icon-check.svg"
+                alt="cheked-icon">
+            </div>
+            <div class="todo-text">
+              <p class="todoText" id="6">Completed Todo App on Frontend Mentor</p>
+            </div>
+            <div class="delete">
+              <img class="delete-row"
+                src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/c533248264a38016caf370e258467a7653b41095/images/icon-cross.svg">
+            </div>
+
+          </div>
+        </div>
+        <div class="todo-items-info">
+          <div class="info-content" id="info">
+            <p class="paragraf" id="dinamicNum">6</p>
+            <p class="paragraf" id="leftItems">items left</p>
+            <p class="paragraf active" id="all">All</p>
+            <p class="paragraf" id="activep">Active</p>
+            <p class="paragraf" id="complited">Completed</p>
+            <p class="paragraf" id="clear"> Clear Completed</p>
+          </div>
+        </div>
+        <div>
+        </div>
+
+        <footer rol="footer">
+          <p class="drag">Drag and drop to reorder list</p>
+
+          <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+            Coded by <a href="#">Zaklina Radivojevic</a>.
+          </div>
+      </div>
+      </footer>
+      <script src="index.js"></script>
+      <script src="dragg.js"></script>
 </body>
 
 </html>
