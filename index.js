@@ -67,7 +67,7 @@ input.addEventListener("keyup", function (event) {
       div.style.display = "none";
     }
   }
-
+  updateNumber()
 
   input.value = "";
 
