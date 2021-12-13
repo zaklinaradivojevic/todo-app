@@ -12,7 +12,9 @@ var elements = document.querySelectorAll(".button-cheked");
 for (let i = 0; i < elements.length; i++) {
   elements[i].addEventListener("click", function () {
     elements[i].classList.add("check");
+    show()
   });
+
 }
 
 
@@ -53,7 +55,7 @@ input.addEventListener("keyup", function (event) {
   for (let i = 0; i < newTodo.length; i++) {
     newTodo[i].addEventListener("click", function () {
       newTodo[i].classList.toggle("check");
-
+      show()
     });
 
   }
@@ -116,4 +118,11 @@ function checkText5() {
 function checkText6() {
   var textDone = document.getElementById("6");
   textDone.classList.add("checkText");
+}
+
+function show() {
+  var show = document.querySelectorAll(".delete");
+  for (i = 0; i < show.length; i++) {
+    show[i].style.display = "block";
+  }
 }
