@@ -82,6 +82,7 @@ for (i = 0; i < close.length; i++) {
   close[i].onclick = function () {
     var div = this.parentElement;
     div.style.display = "none";
+
   }
 }
 
@@ -125,4 +126,10 @@ function show() {
   for (i = 0; i < show.length; i++) {
     show[i].style.display = "block";
   }
+}
+function updateNumber() {
+  var DinumicNumber = document.getElementById("dinamicNum");
+  var list = document.querySelectorAll(".todo-item");
+  var number = list.length;
+  DinumicNumber.textContent = number;
 }
