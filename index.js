@@ -13,7 +13,7 @@ for (let i = 0; i < elements.length; i++) {
   elements[i].addEventListener("click", function () {
     elements[i].classList.add("check");
 
-    show()
+    show();
   });
 
 }
@@ -83,11 +83,11 @@ input.addEventListener("keyup", function (event) {
   var btnDone = document.querySelectorAll('.button-cheked');
   btnDone.onclick = function () {
     checkText();
-
   }
   updateNumber()
 
   input.value = "";
+
 
 });
 
@@ -140,14 +140,31 @@ function checkText6() {
 }
 
 function show() {
-  var show = document.querySelectorAll(".delete");
-  for (i = 0; i < show.length; i++) {
-    show[i].style.display = "block";
+  var x = document.querySelectorAll(".delete");
+  for (i = 0; i < x.length; i++) {
+    if (x[i].style.display == 'none') {
+      x[i].style.display = 'block';
+    } else {
+      x[i].style.display = 'none';
+    }
   }
 }
+
+
 function updateNumber() {
   var DinumicNumber = document.getElementById("dinamicNum");
   var list = document.querySelectorAll(".todo-item");
   var number = list.length;
   DinumicNumber.textContent = number;
 }
+
+var all = document.getElementById("all");
+all.onclick = function () {
+  var divs = document.getElementsByClassName("todo-item");
+  for (var i = 0; i < divs.length; i++) {
+    //You can also write here if condition
+    divs[i].style.display = "block";
+
+  }
+
+};
