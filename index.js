@@ -12,6 +12,7 @@ var elements = document.querySelectorAll(".button-cheked");
 for (let i = 0; i < elements.length; i++) {
   elements[i].addEventListener("click", function () {
     elements[i].classList.add("check");
+
     show()
   });
 
@@ -31,8 +32,16 @@ input.addEventListener("keyup", function (event) {
     var input = document.getElementById("myInput");
     const target = document.querySelector('.todo-items');
     const newTodo = document.createElement('div', draggable = "true");
-    newTodo.className = 'todo-item', 'draggable';
+    newTodo.className = 'todo-item draggable';
     newTodo.draggable = "true";
+    for (var i = 0, len = newTodo.length; i < len; i++) {
+      newTodo[i].attachEvent('dragstart', dragStart);
+      newTodo[i].attachEvent('dragenter', dragEnter);
+      newTodo[i].attachEvent('dragover', dragOver);
+      newTodo[i].attachEvent('dragleave', dragLeave);
+      newTodo[i].attachEvent('dragend', dragEnd);
+      newTodo[i].attachEvent('drop', dragDrop);
+    }
     target.appendChild(newTodo);
     target.parentNode.insertBefore(newTodo, target);
     newTodo.innerHTML = `
@@ -66,6 +75,15 @@ input.addEventListener("keyup", function (event) {
       var div = this.parentElement;
       div.style.display = "none";
     }
+  }
+  var listItens = document.querySelectorAll('.draggable');
+  [].forEach.call(listItens, function (item) {
+    addEventsDragAndDrop(item);
+  });
+  var btnDone = document.querySelectorAll('.button-cheked');
+  btnDone.onclick = function () {
+    checkText();
+
   }
   updateNumber()
 
