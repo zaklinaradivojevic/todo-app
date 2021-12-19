@@ -1,4 +1,6 @@
 
+
+//set activ class to todo-info
 var paragraf = document.querySelectorAll(".paragraf");
 Array.from(paragraf).forEach(item => {
   item.addEventListener("click", () => {
@@ -7,20 +9,79 @@ Array.from(paragraf).forEach(item => {
     item.className += " active";
   });
 })
-
+//check button bg
 var elements = document.querySelectorAll(".button-cheked");
 for (let i = 0; i < elements.length; i++) {
   elements[i].addEventListener("click", function () {
     elements[i].classList.add("check");
-
-    show();
   });
 
 }
+//show delete button on checked item 1
+var button = document.getElementById("button1");
+button.addEventListener("click", function () {
+  var textCrosed = document.getElementById("1");
+  var remove = document.getElementById("remove1");
+  button.classList.add("check");
+  textCrosed.classList.add("checkText");
+  remove.style.display = "block";
+});
+//show delete button on checked item 2
+var button = document.getElementById("button2");
+button.addEventListener("click", function () {
+  var textCrosed = document.getElementById("2");
+  var remove = document.getElementById("remove2");
+  button.classList.add("check");
+  textCrosed.classList.add("checkText");
+  remove.style.display = "block";
+});
+//show delete button on checked item
+var button = document.getElementById("button3");
+button.addEventListener("click", function () {
+  var textCrosed = document.getElementById("3");
+  var remove = document.getElementById("remove3");
+  button.classList.add("check");
+  textCrosed.classList.add("checkText");
+  remove.style.display = "block";
+});
+//show delete button on checked item
+var button = document.getElementById("button4");
+button.addEventListener("click", function () {
+  var textCrosed = document.getElementById("4");
+  var remove = document.getElementById("remove4");
+  button.classList.add("check");
+  textCrosed.classList.add("checkText");
+  remove.style.display = "block";
+});
+//show delete button on checked item
+var button = document.getElementById("button5");
+button.addEventListener("click", function () {
+  var textCrosed = document.getElementById("5");
+  var remove = document.getElementById("remove5");
+  button.classList.add("check");
+  textCrosed.classList.add("checkText");
+  remove.style.display = "block";
+});
+//show delete button on checked item
+var button = document.getElementById("button6");
+button.addEventListener("click", function () {
+  var textCrosed = document.getElementById("6");
+  var remove = document.getElementById("remove6");
+  button.classList.add("check");
+  textCrosed.classList.add("checkText");
+  remove.style.display = "block";
+});
+//click only once
+var button = document.querySelector(".button-cheked");
+button.addEventListener("click", onClick);
 
+function onClick() {
+  console.log("Clicked");
+  button.disabled = true;
+}
 
+//add new todo
 var input = document.getElementById("myInput");
-
 input.addEventListener("keyup", function (event) {
   var x;
   x = document.getElementById("myInput").value;
@@ -30,6 +91,11 @@ input.addEventListener("keyup", function (event) {
   if (event.keyCode === 13 && x != "") {
     event.preventDefault();
     var input = document.getElementById("myInput");
+    var checbox = document.querySelector("input[type='checkbox']");
+    var label = document.querySelector("label");
+    var list = document.querySelectorAll(".todo-item");
+    var number = list.length;
+
     const target = document.querySelector('.todo-items');
     const newTodo = document.createElement('div', draggable = "true");
     newTodo.className = 'todo-item draggable';
@@ -45,13 +111,16 @@ input.addEventListener("keyup", function (event) {
     target.appendChild(newTodo);
     target.parentNode.insertBefore(newTodo, target);
     newTodo.innerHTML = `
-     <div class="button-cheked" onclick="checkText() ">
+     <div class="button-cheked" onclick="checkText()">
+     <label for="item-6">
+     <input type="checkbox"  />
   <img class="cheked-btn" 
     src="https://raw.githubusercontent.com/zaklinaradivojevic/todo-app/8c812e715ad10f19665a13ecd44d1a5d51d6f0be/images/icon-check.svg"
     alt="cheked-icon">
+    </label>
 </div>
 <div class="todo-text">
-  <p class="todoText" id="0">${input.value}<p>
+  <p class="todoText">${input.value}<p>
 </div>
 <div class="delete">
 <img class="delete-row"
@@ -59,14 +128,29 @@ input.addEventListener("keyup", function (event) {
 </div>
 
 `;
+    checbox.name = "item-" + number;
+    checbox.id = "item-" + number;
+    label.htmlFor = "item-" + number;
+
   }
+
+  //click only once
+  var button = document.querySelector(".button-cheked");
+  button.addEventListener("click", onClick);
+
+  function onClick() {
+    console.log("Clicked");
+    button.disabled = true;
+  }
+
   var newTodo = document.querySelectorAll(".button-cheked");
   for (let i = 0; i < newTodo.length; i++) {
     newTodo[i].addEventListener("click", function () {
-      newTodo[i].classList.toggle("check");
-      show()
+      [].forEach.call("click", function (item) {
+        newTodo[i].classList.toggle("check");
+        checkText(item);
+      });
     });
-
   }
   var close = document.getElementsByClassName("delete");
   var i;
@@ -91,65 +175,10 @@ input.addEventListener("keyup", function (event) {
 
 });
 
-
-
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("delete");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function () {
-    var div = this.parentElement;
-    div.style.display = "none";
-
-  }
-}
-
 function checkText() {
   var textDone = document.querySelector(".todoText");
   textDone.classList.add("checkText");
 }
-
-function checkText1() {
-  var textDone = document.getElementById("1");
-  textDone.classList.add("checkText");
-}
-
-function checkText2() {
-  var textDone = document.getElementById("2");
-  textDone.classList.add("checkText");
-}
-
-function checkText3() {
-  var textDone = document.getElementById("3");
-  textDone.classList.add("checkText");
-}
-
-function checkText4() {
-  var textDone = document.getElementById("4");
-  textDone.classList.add("checkText");
-}
-
-function checkText5() {
-  var textDone = document.getElementById("5");
-  textDone.classList.add("checkText");
-}
-
-function checkText6() {
-  var textDone = document.getElementById("6");
-  textDone.classList.add("checkText");
-}
-
-function show() {
-  var x = document.querySelectorAll(".delete");
-  for (i = 0; i < x.length; i++) {
-    if (x[i].style.display == 'none') {
-      x[i].style.display = 'block';
-    } else {
-      x[i].style.display = 'none';
-    }
-  }
-}
-
 
 function updateNumber() {
   var DinumicNumber = document.getElementById("dinamicNum");
@@ -158,13 +187,4 @@ function updateNumber() {
   DinumicNumber.textContent = number;
 }
 
-var all = document.getElementById("all");
-all.onclick = function () {
-  var divs = document.getElementsByClassName("todo-item");
-  for (var i = 0; i < divs.length; i++) {
-    //You can also write here if condition
-    divs[i].style.display = "block";
 
-  }
-
-};
